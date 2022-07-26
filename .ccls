@@ -1,8 +1,10 @@
 clang
-%c -std=c11
-%cpp -std=c++2a
-%h %hpp --include=Global.h
--I./outlib
--I./inlib/interp
--Iinc
--DMACRO
+-ccc-install-dir
+/usr/local/Cellar/llvm/14.0.6_1/bin
+%h -x
+%h c++-header
+%cpp -std=c++11
+%cpp -stdlib=libc++
+-I./outlib/
+-I./inlib/interp/
+-I.

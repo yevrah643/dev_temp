@@ -1,38 +1,40 @@
-#include <cstdio>
-#include "Config.h"
+#ifdef ONPC
+#define _GLIBCXX_DEBUG
+#endif
+#include <algorithm>
+#include <cmath>
 #include <iostream>
-#include <interpolate.h>
+#include <queue>
+#include <random>
+#include <time.h>
+#include <vector>
 
-int main(int argc, char* argv[]) 
-{
-    // output program location and version
-    printf("Check: %s\n Version: %i.%i\n\n",
-		    argv[argc-argc], 
-		    VERSION_MAJOR, VERSION_MINOR);
+#define sz(a) ((int)((a).size()))
+#define char unsigned char
 
-    std::cout << "Outlib contains outsource files works well!" << std::endl;
+std::mt19937 rnd(std::chrono::steady_clock::now().time_since_epoch().count());
+typedef long long ll;
+typedef long double ld;
 
-    float t = 0.0f;     // elapsed time
-    float b = 10.0f;    // start value
-    float c = 20.0f;    // change value
-    float d = 5.0f;     // duration
-
-    // output argument values
-    printf("t - %4.3f\nb - %4.3f\nc - %4.3f\nd - %4.3f\n\n",
-        t, b, c, d);
-    
-    // output headings
-    printf("%-20s%s\n", "Value", "Elapsed Time");
-    printf("%-20s%s\n", "-----", "------------");
-
-    // simulate values
-    for (t=0.0f; t < d; t+= .25f) {
-        printf("%-20.3f%4.3f secs\n",
-            animation::linear(t,b,c,d), t);
-    }
-
-    printf("\n-> Simulation finished...\n");
-    std::cout<<"Inlib contains project lirabry works well!!!" << std::endl; 
-
+int solve() {
+  int n;
+  if ((std::cin >> n)) {
     return 0;
+  }
+  std::cout << n << std::endl;
+  return -1; // Failure || Not Found || Unvalid
+}
+
+int32_t main() {
+  std::cout << " Running solving: " << std::endl;
+  int TET = 4;
+  for (int i = 1; i <= TET; i++) {
+    if (solve()) {
+      break;
+    }
+    std::cout << "--------------------------------" << std::endl;
+  }
+  std::cerr << std::endl
+            << "fisnished in " << clock() * 1.0 / CLOCKS_PER_SEC << " sec"
+            << std::endl;
 }

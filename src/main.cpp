@@ -1,6 +1,7 @@
 #ifdef ONPC
 #define _GLIBCXX_DEBUG
 #endif
+
 #include <algorithm>
 #include <cmath>
 #include <iostream>
